@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="{%url 'write' %}" enctype="multipart/form-data">
+        {%csrf_token%}
+        <h2>제목: <input type="text" name="title"></h2>
+        <h2>작성자: 
+            <select name="writer">
+                <option selected disabled>선택</option>
+                <option value="박철홍">박철홍</option>
+                <option value="송가연">송가연</option>
+                <option value="박진효">박진효</option>
+                <option value="박상아">박상아</option>
+            </select>
+        </h2>
+        <h2>내용</h2>
+        <textarea name="content" cols="40" rows="30"></textarea>
+        <br>
+        <br>
+        <h2>사진: <input type="file" name="image"></h2>
+        <br><br>
+        <button type="submit">제출하기</button>
+    </form>
+</body>
+</html>
